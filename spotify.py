@@ -51,11 +51,11 @@ st.title("Spotify Recommendation")
 @st.experimental_memo(suppress_st_warning=True)
 def userentry():
     song=st.text_area("Enter Song Name:")
-    submit=st.button(label='Recommend')
-    if len(song)<1:
-        st.write(" ")
-    else:
-        ex=song
-        pred=recommendations.recommend(ex,10)
-        st.write(pred)
+    if (st.button(label='Recommend')):
+        if len(song)<1:
+            st.write(" ")
+        else:
+            ex=song
+            pred=recommendations.recommend(ex,10)
+            st.write(pred)
 userentry()
