@@ -23,6 +23,7 @@ features = kmeans.fit_predict(normalization)
 data['features'] = features
 MinMaxScaler(data['features'])
 
+
 class Spotify_Recommendation():
     def __init__(self, dataset):
         self.dataset = dataset
@@ -41,12 +42,13 @@ class Spotify_Recommendation():
         columns = ['artists', 'name']
         return rec[columns][:amount]
 
+
 recommendations = Spotify_Recommendation(data)
 
 
-
 st.title("Spotify Recommendation")
-
+@st.cache(suppress_st_warning=True)
+@st.experimental_memo
 def userentry():
     song=st.text_area("Enter Song Name:")
     submit=st.button(label='Recommend')
