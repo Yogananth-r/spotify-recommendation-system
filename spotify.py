@@ -48,7 +48,7 @@ recommendations = Spotify_Recommendation(data)
 
 st.title("Spotify Recommendation")
 
-@st.experimental_memo
+@st.experimental_memo(suppress_st_warning=True)
 def userentry():
     song=st.text_area("Enter Song Name:")
     submit=st.button(label='Recommend')
