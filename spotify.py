@@ -56,7 +56,6 @@ def userentry():
     else:
         ex=song
         @st.cache(suppress_st_warning=True)
-        @st.experimental_memo
         pred=recommendations.recommend(ex,10)
         st.write(pred)
 userentry()
