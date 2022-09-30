@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import warnings
+import warnings as warn
 import matplotlib.pyplot as plt
 import seaborn as sns
 from tqdm import tqdm
